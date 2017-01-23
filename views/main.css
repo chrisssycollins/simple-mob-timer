@@ -1,0 +1,68 @@
+:root {
+    font-size: 13px;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.7);
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.overlay--ended {
+	display: none;
+}
+
+.nav {
+    position: absolute;
+    left: 0;
+	top:0;
+    height: 100%;
+}
+
+.nav__item {
+	color: #fff;
+	display: block;
+	opacity: 0.4;
+	cursor: pointer;
+	margin: 2px 5px;
+}
+
+#main {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.counter {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+
+.btn {
+	margin: 0px 2px;
+}

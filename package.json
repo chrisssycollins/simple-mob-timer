@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "productName": "App",
+  "productName": "app",
   "version": "0.0.0",
   "description": "",
   "license": "MIT",
@@ -13,12 +13,13 @@
   "scripts": {
     "test": "xo",
     "start": "electron .",
-    "build": "electron-packager . --out=dist --asar --overwrite --all"
+    "build": "electron-packager . --out=dist --asar --overwrite --darwin"
   },
+  "main": "index.js",
   "files": [
-    "index.js",
-    "index.html",
-    "index.css"
+    "views/main.js",
+    "views/main.html",
+    "views/main.css"
   ],
   "keywords": [
     "electron-app",
