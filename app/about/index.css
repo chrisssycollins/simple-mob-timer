@@ -1,0 +1,17 @@
+:root {
+    --font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.content {
+    padding:0 20px;
+}

@@ -9,6 +9,7 @@ require('electron-debug')();
 // prevent window being garbage collected
 let mainWindow;
 let settingsWindow;
+let aboutWindow;
 
 function onClosed() {
  // dereference the window
@@ -30,12 +31,32 @@ function createMainWindow() {
  win.loadURL(`file://${__dirname}/app/timer/index.html`);
  win.on('closed', onClosed);
 
- // open dev tools
- let contents = win.webContents
- contents.openDevTools({
-  mode: "detach"
+ // // open dev tools
+ // let contents = win.webContents
+ // contents.openDevTools({
+ //  mode: "detach"
+ // });
+
+ return win;
+}
+
+function createAboutWindow() {
+ const win = new electron.BrowserWindow({
+  resizable: false,
+  maximizable: false,
+  minimizable: false,
+  width: 450,
+  height: 350,
+  show: false
  });
 
+ win.loadURL(`file://${__dirname}/app/about/index.html`);
+
+ win.on('close', (e) => {
+  /* the user only tried to close the window */
+  e.preventDefault();
+  win.hide();
+ });
  return win;
 }
 
@@ -76,6 +97,7 @@ app.on('activate', () => {
 app.on('ready', () => {
  mainWindow = createMainWindow();
  settingsWindow = createSettingsWindow();
+ aboutWindow = createAboutWindow();
  const menuTemplate = [{
   label: 'Simple Mob Timer',
   submenu: [{
@@ -88,7 +110,7 @@ app.on('ready', () => {
   }, {
    label: 'About',
    click: () => {
-    alert('These are coming soon. Sorrrrry :(');
+    aboutWindow.show();
    }
   }, {
    label: 'Quit',
