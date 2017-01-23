@@ -1,6 +1,6 @@
 # Simple mob timer
 
-> A really minimal and basic countdown timer for mobbing sessions. 
+> A really minimal and basic countdown timer for mobbing sessions.
 
 
 ## Dev
@@ -26,4 +26,4 @@ Builds the app for macOS using [electron-packager](https://github.com/electron-u
 
 ## License
 
-MIT © 
+MIT ©

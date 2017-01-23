@@ -1,6 +1,6 @@
 'use strict';
 const electron = require('electron');
-
+const Menu = electron.Menu;
 const app = electron.app;
 
 // adds debug features like hotkeys for triggering dev tools and reload
@@ -8,6 +8,7 @@ require('electron-debug')();
 
 // prevent window being garbage collected
 let mainWindow;
+let settingsWindow;
 
 function onClosed() {
  // dereference the window
@@ -20,12 +21,13 @@ function createMainWindow() {
   alwaysOnTop: true,
   frame: false,
   height: 50,
+  icon: __dirname + '/icon.icns',
   resizable: false,
   transparent: true,
   width: 170
  });
 
- win.loadURL(`file://${__dirname}/views/main.html`);
+ win.loadURL(`file://${__dirname}/app/timer/index.html`);
  win.on('closed', onClosed);
 
  // open dev tools
@@ -36,6 +38,28 @@ function createMainWindow() {
 
  return win;
 }
+
+
+function createSettingsWindow() {
+ const win = new electron.BrowserWindow({
+  resizable: false,
+  maximizable: false,
+  width: 450,
+  height: 350,
+  show: false
+ });
+
+ win.loadURL(`file://${__dirname}/app/settings/index.html`);
+
+ win.on('close', (e) => {
+  /* the user only tried to close the window */
+  e.preventDefault();
+  win.hide();
+ });
+ return win;
+}
+
+
 
 app.on('window-all-closed', () => {
  if (process.platform !== 'darwin') {
@@ -51,4 +75,28 @@ app.on('activate', () => {
 
 app.on('ready', () => {
  mainWindow = createMainWindow();
+ settingsWindow = createSettingsWindow();
+ const menuTemplate = [{
+  label: 'Simple Mob Timer',
+  submenu: [{
+   label: 'Settings',
+   click: () => {
+    settingsWindow.show();
+   }
+  }, {
+   type: 'separator'
+  }, {
+   label: 'About',
+   click: () => {
+    alert('These are coming soon. Sorrrrry :(');
+   }
+  }, {
+   label: 'Quit',
+   click: () => {
+    app.quit();
+   }
+  }]
+ }];
+ const menu = Menu.buildFromTemplate(menuTemplate);
+ Menu.setApplicationMenu(menu);
 });

@@ -1,11 +1,12 @@
 const remote = require('electron').remote;
 
+
 var startSection = document.getElementById("start"),
  endedSection = document.getElementById("ended"),
  mainSection = document.getElementById("main"),
  mins = 00,
  seconds = 05,
- alarm = new Audio('./../assets/media/alarm.mp3');
+ alarm = new Audio('./../../assets/media/alarm.mp3');
 
 alarm.addEventListener('ended', function() {
  this.currentTime = 0;

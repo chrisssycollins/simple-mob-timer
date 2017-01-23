@@ -1,4 +1,6 @@
 :root {
+    --countdown-bg-color: rgba(0, 0, 0, 0.7);
+    --font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 13px;
 }
 
@@ -11,8 +13,8 @@ html {
 }
 
 body {
-    background: rgba(0, 0, 0, 0.7);
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    background: var(--countdown-bg-color);
+    font-family: var(--font-family);
 }
 
 .overlay {
