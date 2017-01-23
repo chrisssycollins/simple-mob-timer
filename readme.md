@@ -1,6 +1,6 @@
-# app [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+# Simple mob timer
 
-> My superb app
+> A really minimal and basic countdown timer for mobbing sessions. 
 
 
 ## Dev
@@ -21,9 +21,9 @@ $ npm start
 $ npm run build
 ```
 
-Builds the app for macOS, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
+Builds the app for macOS using [electron-packager](https://github.com/electron-userland/electron-packager) Windows and Linux coming soon.
 
 
 ## License
 
-MIT © [<%= name %>](<%= website %>)
+MIT © 
