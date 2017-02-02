@@ -4,16 +4,14 @@ const remote = require('electron').remote;
 var startSection = document.getElementById("start"),
  endedSection = document.getElementById("ended"),
  mainSection = document.getElementById("main"),
- mins = 00,
- seconds = 05,
  alarm = new Audio('./../../assets/media/alarm.mp3');
 
-alarm.addEventListener('ended', function() {
+alarm.addEventListener('ended', function () {
  this.currentTime = 0;
  this.play();
 }, false);
 
-document.getElementById("close").addEventListener("click", function(e) {
+document.getElementById("close").addEventListener("click", function (e) {
  remote.app.quit();
 });
 
@@ -23,7 +21,7 @@ function startTimer() {
  endedSection.style.display = 'none';
 
  mainSection.style.display = 'flex';
- countdown("counter", mins, seconds);
+ countdown("counter", 10, 00);
  alarm.pause();
  alarm.currentTime = 0;
 }
