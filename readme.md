@@ -1,4 +1,4 @@
-![](https://cdn.rawgit.com/chrisssycollins/4ad0c72008075bb52ecd71fbfa269de9/raw/44aaf288ee791be6cc65eb7d6ff3a0bb1be5c2db/Artboard.svg)
+<img width="150" src="https://cdn.rawgit.com/chrisssycollins/4ad0c72008075bb52ecd71fbfa269de9/raw/44aaf288ee791be6cc65eb7d6ff3a0bb1be5c2db/Artboard.svg"/>
 
 # Simple Mob Timer
 
